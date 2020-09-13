@@ -1,0 +1,9 @@
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+management.endpoints.web.exposure.include=*
+logging.level.org.springframework.web: DEBUG
+
+spring.datasource.url= jdbc:mysql://localhost:3306/springbootdb
+spring.datasource.username=pranjali
+spring.datasource.password=pranjali
+spring.jpa.hibernate.ddl-auto=update

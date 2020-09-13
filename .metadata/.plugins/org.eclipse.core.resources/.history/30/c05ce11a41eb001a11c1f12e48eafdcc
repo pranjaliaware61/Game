@@ -1,0 +1,38 @@
+package com.springboot.rest.FirstRestApplication.jpa;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.springboot.rest.FirstRestApplication.model.User;
+
+@Component
+public class CommandLine implements CommandLineRunner {
+
+	@Autowired
+	UserRepository repository;
+
+	@Override
+	public void run(String... args) throws Exception {
+		// After spring boot application launches,the first thing that executes is
+		// within the CommandLineRunner run method.
+		// System.out.println("Argument length:" + args.length);
+		System.out.println("First Task after spring boot application launch");
+		repository.save(new User("Pranjali", "Software Engineer"));
+		repository.save(new User("Mayur", "Mechanical Engineer"));
+		repository.save(new User("Sanjay", "TATA Motors"));
+		repository.save(new User("Rajashree", "HomeMaker"));
+
+		/*System.out.println("First Task after spring boot application launch");
+		System.out.println(repository.save(new User("Pranjali", "Software Engineer")));
+		System.out.println(repository.save(new User("Mayur", "Mechanical Engineer")));
+		System.out.println(repository.save(new User("Sanjay", "TATA Motors")));
+		System.out.println(repository.save(new User("Rajashree", "HomeMaker")));*/
+		
+		for (User temp : repository.findAll()) {
+			System.out.println(temp);
+		}
+
+	}
+
+}

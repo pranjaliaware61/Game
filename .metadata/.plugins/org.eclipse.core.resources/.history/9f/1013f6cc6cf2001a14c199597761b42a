@@ -1,0 +1,30 @@
+package com.springboot.rest.FirstRestApplication.security;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter
+{
+	protected void configure(AuthenticationManagerBuilder auth)
+			throws Exception {
+		auth.inMemoryAuthentication().withUser("user1").password("secret1")
+				.roles("USER").and().withUser("admin1").password("secret1")
+				.roles("ADMIN").and().withUser("head1").password("secret1").roles("HEAD");
+		//.passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).
+
+			}
+	
+	
+	
+	protected void configure(HttpSecurity http) throws Exception
+	{
+		http.httpBasic().and().authorizeRequests()
+		.antMatchers("/surveys/Survey1/questions/Question1").hasRole("USER")
+		.antMatchers("/surveys/Survey1/questions/Question2").hasRole("ADMIN")
+		.antMatchers("surveys/Survey1/questions/Question3").hasRole("HEAD");
+		//.and().csrf().disable().headers().frameOptions().disable()
+	}
+}

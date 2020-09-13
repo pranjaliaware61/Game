@@ -1,0 +1,38 @@
+package com.example.BookManagement.controller;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.example.BookManagement.model.User;
+import com.springboot.springbootFirstWebApplication.model.ToDo;
+
+import javassist.expr.NewArray;
+
+@Controller
+public class BookController 
+{
+	@RequestMapping("/welcome")
+	public String welcomePage()
+	{
+		System.out.println("welcomePage");
+		return "welcomeToBookManagement";
+		
+	}
+	
+	@RequestMapping("/signIn")
+	public String signInPage(ModelMap model)
+	{
+		model.addAttribute("user",new User((String)model.get("userName"), (String)model.get("password"), (String)model.get("email"), new Date(), (String)model.get("address"), (String)model.get("mobileNumber")));
+		return "AddToDo";
+		System.out.println("signInPage");
+		return "Register";
+		
+	}
+
+	
+
+}

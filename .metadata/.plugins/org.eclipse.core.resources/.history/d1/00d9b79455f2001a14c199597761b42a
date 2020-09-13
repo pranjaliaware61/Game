@@ -1,0 +1,7 @@
+package com.springboot.rest.FirstRestApplication.security;
+
+public class SecurityConfig 
+{
+	
+
+}

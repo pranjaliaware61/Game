@@ -1,0 +1,5 @@
+package com.example.BookManagement.jpa;
+
+public interface UserRepository {
+
+}

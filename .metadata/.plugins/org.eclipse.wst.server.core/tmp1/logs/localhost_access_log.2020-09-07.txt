@@ -1,0 +1,5 @@
+127.0.0.1 - - [07/Sep/2020:10:04:29 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [07/Sep/2020:10:04:45 +0530] "GET /FileRestAPI/FileServlet HTTP/1.1" 200 2623
+0:0:0:0:0:0:0:1 - - [07/Sep/2020:10:16:35 +0530] "GET /FileRestAPI/FileServlet HTTP/1.1" 200 2813
+0:0:0:0:0:0:0:1 - - [07/Sep/2020:10:16:35 +0530] "GET /FileRestAPI/FileServlet HTTP/1.1" 200 2813
+0:0:0:0:0:0:0:1 - - [07/Sep/2020:10:16:35 +0530] "GET /FileRestAPI/FileServlet HTTP/1.1" 200 2813
